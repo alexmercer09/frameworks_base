@@ -4787,7 +4787,53 @@ public final class Settings {
         private static final Validator NIGHT_BRIGHTNESS_VALUE_VALIDATOR = NON_NEGATIVE_INTEGER_VALIDATOR;
 
         /**
-         * Citrus-CAF SystemSettings additions ends
+         * some devices have a extra hw button e.g. n3 on the back on the
+         * fingerprint sensor. allow mapping button to key
+         *
+         * @hide
+         */
+        public static final String CUSTOM_BUTTON_EXTRA_KEY_MAPPING = "button_extra_mapping";
+
+        /** @hide */
+        private static final Validator CUSTOM_BUTTON_EXTRA_KEY_MAPPING_VALIDATOR =
+                ANY_STRING_VALIDATOR;
+
+        /**
+         * Enable proxi check for wake keys - must be implemented in a device
+         * KeyHandler
+         * @hide
+         */
+        public static final String CUSTOM_DEVICE_PROXI_CHECK_ENABLED = "device_proxi_check_enabled";
+
+        /** @hide */
+        private static final Validator CUSTOM_DEVICE_PROXI_CHECK_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Enable Gesture Haptic feedback
+         * KeyHandler
+         * @hide
+         */
+        public static final String CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED =
+                "device_gesture_feedback_enabled";
+
+        /** @hide */
+        private static final Validator CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * @hide
+         */
+        public static final String CUSTOM_DEVICE_FEATURE_SETTINGS = "device_feature_settings";
+
+        /** @hide */
+        private static final Validator CUSTOM_DEVICE_FEATURE_SETTINGS_VALIDATOR =
+                ANY_STRING_VALIDATOR;
+
+        /**
+         * 0 - fullscreen
+         * 1 - partial
+         * @hide
          */
 
         /**
@@ -5245,18 +5291,16 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_SHOW_CARRIER, STATUS_BAR_SHOW_CARRIER_VALIDATOR);
             VALIDATORS.put(CUSTOM_CARRIER_LABEL, CUSTOM_CARRIER_LABEL_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_CLOCK_SHOW_SECONDS, STATUS_BAR_CLOCK_SHOW_SECONDS_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_CLOCK_SHOW_AM_PM, STATUS_BAR_CLOCK_SHOW_AM_PM_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_CLOCK_SHOW_DAY, STATUS_BAR_CLOCK_SHOW_DAY_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_STATE, NETWORK_TRAFFIC_STATE_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_TYPE, NETWORK_TRAFFIC_TYPE_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD_VALIDATOR);
-            VALIDATORS.put(SYSTEM_PROXI_CHECK_ENABLED, SYSTEM_PROXI_CHECK_ENABLED_VALIDATOR);
-            VALIDATORS.put(BUTTON_EXTRA_KEY_MAPPING, BUTTON_EXTRA_KEY_MAPPING_VALIDATOR);
-            VALIDATORS.put(DEVICE_PROXI_CHECK_ENABLED, DEVICE_PROXI_CHECK_ENABLED_VALIDATOR);
-            VALIDATORS.put(DEVICE_GESTURE_FEEDBACK_ENABLED, DEVICE_GESTURE_FEEDBACK_ENABLED_VALIDATOR);
-            VALIDATORS.put(DEVICE_FEATURE_SETTINGS, DEVICE_FEATURE_SETTINGS_VALIDATOR);
-            VALIDATORS.put(NIGHT_BRIGHTNESS_VALUE, NIGHT_BRIGHTNESS_VALUE_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_STYLE, STATUSBAR_CLOCK_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_SECONDS, STATUS_BAR_CLOCK_SECONDS_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_AM_PM_STYLE, STATUSBAR_CLOCK_AM_PM_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_DATE_DISPLAY, STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
+            VALIDATORS.put(CUSTOM_BUTTON_EXTRA_KEY_MAPPING, CUSTOM_BUTTON_EXTRA_KEY_MAPPING_VALIDATOR);
+            VALIDATORS.put(CUSTOM_DEVICE_PROXI_CHECK_ENABLED, CUSTOM_DEVICE_PROXI_CHECK_ENABLED_VALIDATOR);
+            VALIDATORS.put(CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED, CUSTOM_DEVICE_GESTURE_FEEDBACK_ENABLED_VALIDATOR);
+            VALIDATORS.put(CUSTOM_DEVICE_FEATURE_SETTINGS, CUSTOM_DEVICE_FEATURE_SETTINGS_VALIDATOR);
         }
 
         /**
