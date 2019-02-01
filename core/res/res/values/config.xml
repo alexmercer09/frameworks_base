@@ -3474,4 +3474,10 @@
     <!-- List of names that represent dual SoftAp interfaces. -->
     <string-array translatable="false" name="config_wifi_dual_sap_interfaces">
     </string-array>
+
+    <!-- Path to the library that contains a alternative device specific key handler -->
+    <string name="config_alternativeDeviceKeyHandlerLib" translatable="false"></string>
+
+    <!-- Name of that alternative key handler class --> 
+    <string name="config_alternativeDeviceKeyHandlerClass" translatable="false"></string>
 </resources>
